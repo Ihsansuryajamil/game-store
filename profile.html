@@ -36,9 +36,6 @@
 
         <main class="content-area p-4">
             <header class="d-flex justify-content-between align-items-center mb-4">
-                <!-- <button class="btn d-lg-none me-2 p-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar">
-                    <i class="bi bi-list fs-2"></i>
-                </button> -->
                 <a href="index.html" class="d-flex align-items-center gap-3 text-decoration-none text-white me-3">
                     <img src="assets/img/video-games-icon-png-9.jpg" alt="Game Store Logo" class="header-icon">
                     <h1 class="h4 mb-0 d-none d-sm-block">Game Store</h1>
@@ -170,10 +167,23 @@
             
             // Mengatur jumlah slide yang terlihat berdasarkan lebar layar
             breakpoints: {
-                576: { slidesPerView: 2, spaceBetween: 20 },
-                768: { slidesPerView: 3, spaceBetween: 30 },
-                992: { slidesPerView: 4, spaceBetween: 30 },
-                1200: { slidesPerView: 5, spaceBetween: 30 }
+                // Perubahan: Tampilkan 3 kartu di layar mobile
+                320: { 
+                    slidesPerView: 3, 
+                    spaceBetween: 15 
+                },
+                768: { 
+                    slidesPerView: 3, 
+                    spaceBetween: 30 
+                },
+                992: { 
+                    slidesPerView: 4, 
+                    spaceBetween: 30 
+                },
+                1200: { 
+                    slidesPerView: 5, 
+                    spaceBetween: 30 
+                }
             },
 
             // Mengaktifkan tombol navigasi kiri-kanan
