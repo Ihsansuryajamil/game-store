@@ -1,0 +1,269 @@
+/* Mengatur warna dasar untuk tema gelap */
+:root {
+    --sidebar-width: 80px;
+    --dark-bg: #121212;
+    --card-bg: #1e1e1e;
+    --hover-bg: #2a2a2a;
+    --white-bg: #c7e9ef;
+}
+
+body {
+    background-color: var(--dark-bg);
+    min-height: 100vh;
+    overflow-x: hidden; /* Mencegah scroll horizontal */
+}
+
+/* --- Sidebar Responsif --- */
+
+/* Aturan untuk Desktop (Layar Lebar): Sidebar menempel/fixed */
+@media (min-width: 992px) {
+    .sidebar.offcanvas-lg {
+        /* Override perilaku offcanvas Bootstrap di desktop */
+        transform: none;
+        visibility: visible !important;
+        
+        /* Terapkan gaya sidebar fixed HANYA di desktop */
+        width: var(--sidebar-width);
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        /* DIUBAH: Warna background menjadi biru */
+        background-color: var(--card-bg);
+        z-index: 1000;
+    }
+
+    .content-area {
+        margin-left: var(--sidebar-width);
+        width: calc(100% - var(--sidebar-width));
+    }
+}
+
+/* Aturan untuk Mobile (Layar Kecil): Layout full-width */
+@media (max-width: 991.98px) {
+    .sidebar.offcanvas-start {
+        width: var(--sidebar-width);
+    }
+    
+    .sidebar .offcanvas-body {
+        padding: 0 !important;
+    }
+
+    .content-area {
+        margin-left: 0;
+        width: 100%;
+    }
+}
+
+/* Style Link Sidebar Umum (Berlaku di mobile & desktop) */
+.sidebar .nav-link {
+    font-size: 1.75rem;
+    color: var(--bs-gray-500);
+    text-align: center;
+    padding: 0.75rem 0;
+    border-radius: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.sidebar .nav-link:hover {
+    color: var(--bs-light);
+    background-color: var(--hover-bg);
+}
+
+.sidebar .nav-link.active {
+    color: var(--bs-primary);
+    background-color: transparent;
+}
+
+/* --- Header --- */
+.header-icon {
+    height: 36px;
+    width: auto;
+    border-radius: 6px;
+}
+
+.search-bar-wrapper {
+    max-width: 400px;
+}
+
+.search-bar-wrapper .input-group-text,
+.search-bar {
+    background-color: var(--card-bg);
+    border: 1px solid var(--bs-border-color);
+}
+
+.search-bar:focus {
+    background-color: var(--card-bg);
+    box-shadow: none;
+    border-color: var(--bs-primary);
+}
+
+/* --- Game Cards --- */
+.game-card {
+    background-color: var(--card-bg);
+    border: none;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    color: var(--bs-body-color);
+}
+
+.game-card img {
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+}
+
+.game-card .card-body {
+    padding: 1rem;
+}
+
+.game-card .card-title {
+    font-size: 1rem;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.game-card .price {
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 0;
+}
+
+/* --- Profile List (profile.html) --- */
+.profile-list .list-group-item {
+    background-color: var(--card-bg);
+    border: 1px solid var(--bs-border-color);
+    margin-bottom: 0.75rem;
+    border-radius: 0.75rem !important;
+    padding: 1.25rem;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.profile-list .list-group-item:hover {
+    background-color: var(--hover-bg);
+}
+
+.profile-list .list-group-item i {
+    color: var(--bs-gray-400);
+}
+
+.profile-list .list-group-item strong {
+    font-size: 1rem;
+    color: var(--bs-body-color);
+}
+/* --- Penyesuaian Swiper Slider --- */
+.member-slider {
+    /* Beri sedikit ruang agar tombol navigasi tidak menimpa kartu */
+    padding: 0 40px;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+    /* Membuat ikon panah lebih kecil */
+    font-size: 1.5rem !important;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    /* Mengubah warna panah menjadi putih agar terlihat */
+    color: var(--bs-light) !important;
+    opacity: 0.6;
+    transition: opacity 0.2s ease;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+    opacity: 1;
+}
+
+/* Sembunyikan tombol di layar sangat kecil agar tidak sempit */
+@media (max-width: 576px) {
+    .member-slider {
+        padding: 0;
+    }
+    .swiper-button-next,
+    .swiper-button-prev {
+        display: none;
+    }
+}
+/* --- BARU: Tombol Scroll ke Atas --- */
+.scroll-top {
+  position: fixed;
+  visibility: hidden;
+  opacity: 0;
+  right: 15px;
+  bottom: 15px; /* Akan diubah di mobile */
+  z-index: 999;
+  background: var(--bs-primary); /* Menggunakan warna biru Bootstrap */
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  transition: all 0.4s;
+  text-decoration: none;
+}
+
+.scroll-top i {
+  font-size: 28px;
+  color: #fff;
+  line-height: 0;
+}
+
+.scroll-top:hover {
+  background: #0b5ed7; /* Biru sedikit lebih gelap saat hover */
+  color: #fff;
+}
+
+.scroll-top.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* --- BARU: Navigasi Bawah Mobile --- */
+.mobile-bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: var(--card-bg); /* Menggunakan warna card dari tema Anda */
+  border-top: 1px solid var(--bs-border-color);
+  padding: 0.5rem 0;
+  display: flex;
+  justify-content: space-around;
+  box-shadow: 0 -2px 10px rgba(0,0,0,0.2); /* Bayangan agar terlihat */
+}
+
+.mobile-bottom-nav .nav-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: var(--bs-gray-500); /* Warna ikon non-aktif */
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  text-decoration: none;
+}
+
+.mobile-bottom-nav .nav-link i {
+  font-size: 1.5rem;
+  margin-bottom: 2px;
+}
+
+.mobile-bottom-nav .nav-link.active {
+  color: var(--bs-primary); /* Warna ikon aktif */
+  background-color: transparent;
+}
+
+/* Penyesuaian untuk mobile agar konten tidak tertutup nav */
+@media (max-width: 991.98px) {
+  body {
+    /* Beri ruang di bawah untuk nav */
+    padding-bottom: 70px !important; 
+  }
+  
+  .scroll-top {
+    /* Naikkan tombol scroll agar di atas nav */
+    bottom: 85px; 
+  }
+}
