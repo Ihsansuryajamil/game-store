@@ -54,7 +54,11 @@ body {
         width: 100%;
     }
 }
-
+.container {
+    width: 90%; /* Gunakan persentase agar fleksibel */
+    max-width: 1200px; /* Batas maksimal di desktop */
+    margin: 0 auto; /* Biar tetap di tengah */
+}
 /* Style Link Sidebar Umum (Berlaku di mobile & desktop) */
 .sidebar .nav-link {
     font-size: 1.75rem;
@@ -110,7 +114,11 @@ body {
     position: relative; /* diperlukan untuk z-index saat hover */
     will-change: transform; /* hint browser untuk performa */
 }
-
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
 .game-card img {
     aspect-ratio: 1 / 1; /* Buat gambar kotak */
     width: 100%;
