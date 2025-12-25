@@ -374,7 +374,7 @@
     </script>
 
     <script>
-        // --- Opsi BERSAMA untuk Slider Game (yang tidak berubah) ---
+        // Opsi BERSAMA yang lebih responsif
         const baseGameSliderOptions = {
             loop: true,
             navigation: {
@@ -382,30 +382,42 @@
                 prevEl: '.swiper-button-prev',
             },
             breakpoints: {
-                320: { slidesPerView: 2, spaceBetween: 15 }, 
-                576: { slidesPerView: 2, spaceBetween: 15 },
-                768: { slidesPerView: 3, spaceBetween: 20 },
-                992: { slidesPerView: 4, spaceBetween: 20 },
-                1200: { slidesPerView: 5, spaceBetween: 20 }
+                // HP Kecil: Tampilkan 2 slide, tapi kecilkan jarak (gap)
+                320: { 
+                    slidesPerView: 2, 
+                    spaceBetween: 10 
+                }, 
+                // HP Medium/Besar
+                480: { 
+                    slidesPerView: 2.2, // Memberi kesan ada slide selanjutnya (potongan)
+                    spaceBetween: 15 
+                },
+                // Tablet
+                768: { 
+                    slidesPerView: 3, 
+                    spaceBetween: 20 
+                },
+                // Laptop/Desktop
+                992: { 
+                    slidesPerView: 4, 
+                    spaceBetween: 20 
+                },
+                1200: { 
+                    slidesPerView: 5, 
+                    spaceBetween: 20 
+                }
             }
         };
 
-        // --- Inisialisasi Slider "Paling Laris" (3 detik) ---
+        // Inisialisasi tetap sama
         const swiperLaris = new Swiper('.game-slider-laris', {
-            ...baseGameSliderOptions, // Menggunakan opsi bersama
-            autoplay: { // Menambahkan autoplay spesifik
-                delay: 3000, // 3 detik
-                disableOnInteraction: false,
-            },
+            ...baseGameSliderOptions,
+            autoplay: { delay: 3000, disableOnInteraction: false },
         });
 
-        // --- Inisialisasi Slider "Paling Populer" (5 detik) ---
         const swiperPopuler = new Swiper('.game-slider-populer', {
-            ...baseGameSliderOptions, // Menggunakan opsi bersama
-            autoplay: { // Menambahkan autoplay spesifik
-                delay: 4000, // 5 detik
-                disableOnInteraction: false,
-            },
+            ...baseGameSliderOptions,
+            autoplay: { delay: 4000, disableOnInteraction: false },
         });
     </script>
     <script>

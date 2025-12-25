@@ -168,41 +168,46 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <script>
-        const swiper = new Swiper('.member-slider', {
-            loop: true, // Agar slider bisa berputar terus
-            autoplay: {
-                delay: 3000, // Waktu pindah otomatis: 3 detik
-                disableOnInteraction: false, // Tetap auto-slide setelah interaksi user
+    const swiper = new Swiper('.member-slider', {
+        loop: true,
+        autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
+        },
+        
+        breakpoints: {
+            // Untuk HP kecil (potrait)
+            320: { 
+                slidesPerView: 2, // Cukup 2 kartu agar lebih lega
+                spaceBetween: 10 
             },
-            
-            // Mengatur jumlah slide yang terlihat berdasarkan lebar layar
-            breakpoints: {
-                // Perubahan: Tampilkan 3 kartu di layar mobile
-                320: { 
-                    slidesPerView: 3, 
-                    spaceBetween: 15 
-                },
-                768: { 
-                    slidesPerView: 3, 
-                    spaceBetween: 30 
-                },
-                992: { 
-                    slidesPerView: 4, 
-                    spaceBetween: 30 
-                },
-                1200: { 
-                    slidesPerView: 5, 
-                    spaceBetween: 30 
-                }
+            // Untuk HP ukuran sedang
+            480: { 
+                slidesPerView: 2, 
+                spaceBetween: 15 
             },
+            // Untuk Tablet
+            768: { 
+                slidesPerView: 3, 
+                spaceBetween: 20 
+            },
+            // Untuk Desktop
+            992: { 
+                slidesPerView: 4, 
+                spaceBetween: 30 
+            },
+            1200: { 
+                slidesPerView: 5, 
+                spaceBetween: 30 
+            }
+        },
 
-            // Mengaktifkan tombol navigasi kiri-kanan
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-        });
-    </script>
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+    });
+</script>
 
     <script>
         // --- Script untuk Popover (Sudah ada) ---
