@@ -102,14 +102,20 @@ body {
 .game-card {
     background-color: var(--card-bg);
     border: none;
-    border-radius: 0.75rem;
+    border-radius: 0.75rem; /* Kotak: hilangkan sudut melengkung */
     overflow: hidden;
     color: var(--bs-body-color);
+    display: flex;
+    flex-direction: column;
+    position: relative; /* diperlukan untuk z-index saat hover */
+    will-change: transform; /* hint browser untuk performa */
 }
 
 .game-card img {
-    aspect-ratio: 4 / 5;
+    aspect-ratio: 1 / 1; /* Buat gambar kotak */
+    width: 100%;
     object-fit: cover;
+    display: block;
 }
 
 .game-card .card-body {
@@ -129,6 +135,28 @@ body {
     font-weight: 500;
     margin-bottom: 0;
 }
+
+/* Hover effect: sedikit membesar dan shadow tipis */
+.game-card {
+    transition: transform 180ms ease, box-shadow 180ms ease;
+    transform-origin: center center;
+}
+.game-card:hover {
+    transform: translateY(-4px) scale(1.03);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.45);
+}
+.game-card { cursor: pointer; }
+
+/* Pastikan slider dan slide tidak memotong kartu ketika di-hover */
+.member-slider,
+.member-slider .swiper-wrapper,
+.member-slider .swiper-slide {
+    overflow: visible !important;
+}
+
+/* Saat hover, berikan z-index tinggi agar tidak tertutup header/elemen lain */
+.game-card { z-index: 1; }
+.game-card:hover { z-index: 20; }
 
 /* --- Profile List (profile.html) --- */
 .profile-list .list-group-item {
