@@ -263,7 +263,69 @@
     </nav>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Fitur Pencarian / Filter Lokal
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchInput = document.querySelector('.search-bar');
+            const searchIcon = document.querySelector('.search-bar-wrapper .input-group-text');
+            const cards = document.querySelectorAll('.game-card');
 
+            function filterGames() {
+                const query = searchInput.value.toLowerCase().trim();
+                
+                cards.forEach(card => {
+                    const title = card.querySelector('.card-title').textContent.toLowerCase();
+                    // Mencari container pembungkus kartu (bisa .col atau .swiper-slide)
+                    const container = card.closest('.col') || card.closest('.swiper-slide');
+                    
+                    if (title.includes(query)) {
+                        if (container) container.style.display = ''; // Tampilkan
+                    } else {
+                        if (container) container.style.display = 'none'; // Sembunyikan
+                    }
+                });
+            }
+
+            if (searchInput) {
+                // Filter langsung saat mengetik (real-time)
+                searchInput.addEventListener('input', filterGames);
+                
+                // Filter saat menekan tombol Enter
+                searchInput.addEventListener('keydown', e => {
+                    if (e.key === 'Enter') {
+                        e.preventDefault();
+                        filterGames();
+                    }
+                });
+            }
+
+            if (searchIcon) {
+                // Filter saat ikon kaca pembesar diklik
+                searchIcon.addEventListener('click', filterGames);
+            }
+        });
+    </script>
+    <script>
+    // Fitur Mengacak Urutan Game Saat Refresh
+    document.addEventListener('DOMContentLoaded', function() {
+        // Pilih kontainer yang membungkus semua kartu (div dengan class row)
+        const cardContainer = document.querySelector('section .row.row-cols-2');
+        
+        if (cardContainer) {
+            // Ubah NodeList kartu (.col) menjadi Array agar bisa diacak
+            const cards = Array.from(cardContainer.querySelectorAll('.col'));
+            
+            // Lakukan pengacakan sederhana pada array kartu
+            cards.sort(() => Math.random() - 0.5);
+            
+            // Bersihkan isi kontainer lama
+            cardContainer.innerHTML = '';
+            
+            // Masukkan kembali kartu-kartu yang sudah diacak urutannya
+            cards.forEach(card => cardContainer.appendChild(card));
+        }
+    });
+</script>
     <script>
         // --- Script untuk Popover (Sudah ada) ---
         const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]');

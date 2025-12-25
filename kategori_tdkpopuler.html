@@ -202,7 +202,101 @@
     </nav>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Fitur Pencarian / Filter Lokal
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchInput = document.querySelector('.search-bar');
+            const searchIcon = document.querySelector('.search-bar-wrapper .input-group-text');
+            const cards = document.querySelectorAll('.game-card');
 
+            function filterGames() {
+                const query = searchInput.value.toLowerCase().trim();
+                
+                cards.forEach(card => {
+                    const title = card.querySelector('.card-title').textContent.toLowerCase();
+                    // Mencari container pembungkus kartu (bisa .col atau .swiper-slide)
+                    const container = card.closest('.col') || card.closest('.swiper-slide');
+                    
+                    if (title.includes(query)) {
+                        if (container) container.style.display = ''; // Tampilkan
+                    } else {
+                        if (container) container.style.display = 'none'; // Sembunyikan
+                    }
+                });
+            }
+
+            if (searchInput) {
+                // Filter langsung saat mengetik (real-time)
+                searchInput.addEventListener('input', filterGames);
+                
+                // Filter saat menekan tombol Enter
+                searchInput.addEventListener('keydown', e => {
+                    if (e.key === 'Enter') {
+                        e.preventDefault();
+                        filterGames();
+                    }
+                });
+            }
+
+            if (searchIcon) {
+                // Filter saat ikon kaca pembesar diklik
+                searchIcon.addEventListener('click', filterGames);
+            }
+        });
+    </script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // --- 1. FITUR PENCARIAN / FILTER LOKAL ---
+        const searchInput = document.querySelector('.search-bar');
+        const searchIcon = document.querySelector('.search-bar-wrapper .input-group-text');
+        const cards = document.querySelectorAll('.game-card');
+
+        function filterGames() {
+            const query = searchInput.value.toLowerCase().trim();
+            
+            cards.forEach(card => {
+                const title = card.querySelector('.card-title').textContent.toLowerCase();
+                // Mencari container pembungkus kartu (.col)
+                const container = card.closest('.col');
+                
+                if (title.includes(query)) {
+                    if (container) container.style.display = ''; 
+                } else {
+                    if (container) container.style.display = 'none';
+                }
+            });
+        }
+
+        if (searchInput) {
+            searchInput.addEventListener('input', filterGames);
+            searchInput.addEventListener('keydown', e => {
+                if (e.key === 'Enter') {
+                    e.preventDefault();
+                    filterGames();
+                }
+            });
+        }
+        if (searchIcon) {
+            searchIcon.addEventListener('click', filterGames);
+        }
+
+        // --- 2. FITUR KLIK KARTU BUKA PLAY STORE ---
+        cards.forEach(card => {
+            card.style.cursor = 'pointer'; // Membuat kursor berubah jadi tangan saat di atas kartu
+            card.addEventListener('click', (e) => {
+                // Jangan jalankan jika yang diklik adalah link atau tombol di dalam kartu
+                if (e.target.closest('a') || e.target.closest('button')) return;
+
+                const titleEl = card.querySelector('.card-title');
+                if (!titleEl) return;
+
+                const q = encodeURIComponent(titleEl.textContent.trim());
+                const url = `https://play.google.com/store/search?q=${q}&c=apps`;
+                window.open(url, '_blank', 'noopener');
+            });
+        });
+    });
+</script>
     <script>
         // --- Script untuk Popover (Sudah ada) ---
         const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]');
