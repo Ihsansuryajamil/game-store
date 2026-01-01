@@ -33,298 +33,89 @@
                 </ul>
             </div>
         </nav>
-
         <main class="content-area p-4">
             <header class="d-flex align-items-center gap-3 mb-4">
                 <a href="index.html" class="d-flex align-items-center gap-3 text-decoration-none text-white me-3">
                     <img src="assets/img/video-games-icon-png-9.jpg" alt="Game Store Logo" class="header-icon">
                     <h1 class="h4 mb-0 d-none d-sm-block">Game Store</h1>
                 </a>
-                <!-- <div class="input-group search-bar-wrapper flex-grow-1">
+                <div class="input-group search-bar-wrapper flex-grow-1">
                     <span class="input-group-text"><i class="bi bi-search"></i></span>
-                    <input type="text" class="form-control search-bar" placeholder="Cari aplikasi, game, dan lainnya">
-                </div> -->
+                    <input type="text" class="form-control search-bar" placeholder="Cari genre atau kategori...">
+                </div>
             </header>
-<!-- 
+
             <section class="mb-5">
-                <div class="d-flex justify-content-between align-items-center mb-3">
-                    <h2 class="h4">Kategori game paling laris</h2>
-                </div>
+                <h2 class="h4 mb-4">Pilih Berdasarkan Genre</h2>
                 
-                <div class="swiper member-slider game-slider-laris">
-                    <div class="swiper-wrapper">
-                        
-                        <div class="swiper-slide">
-                            <div class="card game-card h-100">
-                                <img src="https://placehold.co/600x800/2a9d8f/white?text=Simulation" class="card-img-top" alt="eFootball">
+                <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-4" id="genre-container">
+                    
+                    <div class="col">
+                        <a href="genre_action.html" class="text-decoration-none"> <div class="card genre-card h-100 text-center p-4 border-0 shadow-sm" style="background: linear-gradient(45deg, #ff416c, #ff4b2b);">
                                 <div class="card-body">
-                                    <h5 class="card-title">Game Simulation</h5>
-                                    
+                                    <i class="bi bi-fire fs-1 text-white mb-3"></i>
+                                    <h5 class="card-title text-white mb-0">Action</h5>
                                 </div>
                             </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="card game-card h-100">
-                                <img src="https://placehold.co/600x800/e9c46a/black?text=Educational" class="card-img-top" alt="Minecraft">
-                                <div class="card-body">
-                                    <h5 class="card-title">Game Educational</h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="card game-card h-100">
-                                <img src="https://placehold.co/600x800/f4a261/black?text=Adventure" class="card-img-top" alt="Roblox">
-                                <div class="card-body">
-                                    <h5 class="card-title">Game Adventure</h5>
-                                    
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="card game-card h-100">
-                                <img src="https://placehold.co/600x800/e76f51/white?text=E-Sport" class="card-img-top" alt="Township">
-                                <div class="card-body">
-                                    <h5 class="card-title">Game E-Sport</h5>
-                                    
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="card game-card h-100">
-                                <img src="https://placehold.co/600x800/264653/white?text=Role+Play" class="card-img-top" alt="Asphalt 9">
-                                <div class="card-body">
-                                    <h5 class="card-title">Game Role Play</h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="card game-card h-100">
-                                <img src="https://placehold.co/600x800/9b59b6/white?text=Casual" class="card-img-top" alt="FC 25">
-                                <div class="card-body">
-                                    <h5 class="card-title">Game Casual</h5>
-                                    <span class="badge bg-success mb-2"></span>
-                                </div>
-                            </div>
-                        </div>
-
+                        </a>
                     </div>
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-button-prev"></div>
-                </div>
-            </section> -->
 
-            <section>
-                <div class="d-flex justify-content-between align-items-center mb-4">
-                    <h2 class="h4">Game paling populer</h2>
-                    <a href="kategori_populer.html" class="text-decoration-none">Lihat semua <i class="bi bi-chevron-right"></i></a>
-                </div>
-                
-                <div class="swiper member-slider game-slider-populer">
-                    <div class="swiper-wrapper">
-                        
-                        <div class="swiper-slide">
-                            <div class="card game-card h-100">
-                                <img src="assets/img/app/ff.jpg" class="card-img-top" alt="Garena Free Fire">
+                    <div class="col">
+                        <a href="genre_rpg.html" class="text-decoration-none">
+                            <div class="card genre-card h-100 text-center p-4 border-0 shadow-sm" style="background: linear-gradient(45deg, #4776e6, #8e54e9);">
                                 <div class="card-body">
-                                    <h5 class="card-title">Garena Free Fire</h5>
-                                    <span class="badge bg-success mb-2"></span>
+                                    <i class="bi bi-magic fs-1 text-white mb-3"></i>
+                                    <h5 class="card-title text-white mb-0">RPG</h5>
                                 </div>
                             </div>
-                        </div>
-                         <div class="swiper-slide">
-                            <div class="card game-card h-100">
-                                <img src="assets/img/app/pubg.png" class="card-img-top" alt="PUBG">
-                                <div class="card-body">
-                                    <h5 class="card-title">PUBG</h5>
-                                    
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="card game-card h-100">
-                                <img src="assets/img/app/ml.jpg" class="card-img-top" alt="Mobile Legend">
-                                <div class="card-body">
-                                    <h5 class="card-title">Mobile Legend</h5>
-                                    
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="card game-card h-100">
-                                <img src="assets/img/app/brawel.jpeg" class="card-img-top" alt="Brawl Starts">
-                                <div class="card-body">
-                                    <h5 class="card-title">Brawl Starts</h5>
-                                    <span class="badge bg-success mb-2"></span>
-                                </div>
-                            </div>
-                        </div>
-                         <div class="swiper-slide">
-                            <div class="card game-card h-100">
-                                <img src="assets/img/app/sniper3d.webp" class="card-img-top" alt="Sniper 3D">
-                                <div class="card-body">
-                                    <h5 class="card-title">Sniper 3D</h5>
-                                    
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="card game-card h-100">
-                                <img src="assets/img/app/callofduty.png" class="card-img-top" alt="Call Of Duty">
-                                <div class="card-body">
-                                    <h5 class="card-title">Call Of Duty</h5>
-                                    
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="card game-card h-100">
-                                <img src="assets/img/app/amoungus.jpg" class="card-img-top" alt="Amoung Us">
-                                <div class="card-body">
-                                    <h5 class="card-title">Amoung Us</h5>
-                                    
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="card game-card h-100">
-                                <img src="assets/img/app/templerun.jpeg" class="card-img-top" alt="Temple Run 2">
-                                <div class="card-body">
-                                    <h5 class="card-title">Temple Run 2</h5>
-                                    <span class="badge bg-success mb-2"></span>
-                                </div>
-                            </div>
-                        </div>
-                         <div class="swiper-slide">
-                            <div class="card game-card h-100">
-                                <img src="assets/img/app/litepubg.webp" class="card-img-top" alt="PUBG Lite">
-                                <div class="card-body">
-                                    <h5 class="card-title">PUBG Lite</h5>
-                                    
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="card game-card h-100">
-                                <img src="assets/img/app/gangster.png" class="card-img-top" alt="Gangster Vegas">
-                                <div class="card-body">
-                                    <h5 class="card-title">Gangster Vegas</h5>
-                                    
-                                </div>
-                            </div>
-                        </div>
-
+                        </a>
                     </div>
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-button-prev"></div>
-                </div>
-            </section>
-            <section>
-                <div class="d-flex justify-content-between align-items-center mb-4 mt-3">
-                    <h2 class="h4">Game paling tidak populer</h2>
-                    <a href="kategori_tdkpopuler.html" class="text-decoration-none">Lihat semua <i class="bi bi-chevron-right"></i></a>
-                </div>
-                
-                <div class="swiper member-slider game-slider-populer">
-                    <div class="swiper-wrapper">
-                        
-                        <div class="swiper-slide">
-                            <div class="card game-card h-100">
-                                <img src="assets/img/app/wwe.jpeg" class="card-img-top" alt="WWE Mayhem">
+                    <div class="col">
+                        <a href="genre_strategy.html" class="text-decoration-none">
+                            <div class="card genre-card h-100 text-center p-4 border-0 shadow-sm" style="background: linear-gradient(45deg, #11998e, #38ef7d);">
                                 <div class="card-body">
-                                    <h5 class="card-title">WWE Mayhem</h5>
-                                    <span class="badge bg-success mb-2"></span>
+                                    <i class="bi bi-puzzle fs-1 text-white mb-3"></i> 
+                                    <h5 class="card-title text-white mb-0">Strategy</h5>
                                 </div>
                             </div>
-                        </div>
-                         <div class="swiper-slide">
-                            <div class="card game-card h-100">
-                                <img src="assets/img/app/laracroft.png" class="card-img-top" alt="Lara Croft">
-                                <div class="card-body">
-                                    <h5 class="card-title">Lara Croft</h5>
-                                    
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="card game-card h-100">
-                                <img src="assets/img/app/Royal-Revolt-2-icon.webp" class="card-img-top" alt="Royal Revolt 2">
-                                <div class="card-body">
-                                    <h5 class="card-title">Royal Revolt2</h5>
-                                    
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="card game-card h-100">
-                                <img src="assets/img/app/shadowgun.png" class="card-img-top" alt="Shadow Gun">
-                                <div class="card-body">
-                                    <h5 class="card-title">Shadow Gun</h5>
-                                    <span class="badge bg-success mb-2"></span>
-                                </div>
-                            </div>
-                        </div>
-                         <div class="swiper-slide">
-                            <div class="card game-card h-100">
-                                <img src="assets/img/app/bullet.webp" class="card-img-top" alt="Bullet Force">
-                                <div class="card-body">
-                                    <h5 class="card-title">Bullet Force</h5>
-                                    
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="card game-card h-100">
-                                <img src="assets/img/app/modernops.webp" class="card-img-top" alt="Modern OPS">
-                                <div class="card-body">
-                                    <h5 class="card-title">Modern OPS</h5>
-                                    
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="card game-card h-100">
-                                <img src="assets/img/app/bedwar.png" class="card-img-top" alt="Bed Wars">
-                                <div class="card-body">
-                                    <h5 class="card-title">Bed Wars</h5>
-                                    
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="card game-card h-100">
-                                <img src="assets/img/app/slap.jpg" class="card-img-top" alt="Slap Kings">
-                                <div class="card-body">
-                                    <h5 class="card-title">Slap Kings</h5>
-                                    <span class="badge bg-success mb-2"></span>
-                                </div>
-                            </div>
-                        </div>
-                         <div class="swiper-slide">
-                            <div class="card game-card h-100">
-                                <img src="assets/img/app/vektor2.webp" class="card-img-top" alt="Vector 2">
-                                <div class="card-body">
-                                    <h5 class="card-title">Vector 2</h5>
-                                    
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="card game-card h-100">
-                                <img src="assets/img/app/murderus.png" class="card-img-top" alt="Murder US">
-                                <div class="card-body">
-                                    <h5 class="card-title">Murder US</h5>
-                                    
-                                </div>
-                            </div>
-                        </div>
-
+                        </a>
                     </div>
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-button-prev"></div>
+
+                    <div class="col">
+                        <a href="genre_family.html" class="text-decoration-none">
+                            <div class="card genre-card h-100 text-center p-4 border-0 shadow-sm" style="background: linear-gradient(45deg, #f2994a, #f2c94c);">
+                                <div class="card-body">
+                                    <i class="bi bi-house-heart fs-1 text-white mb-3"></i>
+                                    <h5 class="card-title text-white mb-0">Family</h5>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col">
+                        <a href="genre_sports.html" class="text-decoration-none">
+                            <div class="card genre-card h-100 text-center p-4 border-0 shadow-sm" style="background: linear-gradient(45deg, #00b4db, #0083b0);">
+                                <div class="card-body">
+                                    <i class="bi bi-trophy fs-1 text-white mb-3"></i>
+                                    <h5 class="card-title text-white mb-0">Sports</h5>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col">
+                        <a href="genre_racing.html" class="text-decoration-none">
+                            <div class="card genre-card h-100 text-center p-4 border-0 shadow-sm" style="background: linear-gradient(45deg, #373333, #243b55);">
+                                <div class="card-body">
+                                    <i class="bi bi-speedometer2 fs-1 text-white mb-3"></i>
+                                    <h5 class="card-title text-white mb-0">Racing</h5>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
                 </div>
             </section>
         </main>
-
         <a href="#" class="scroll-top d-flex align-items-center justify-content-center">
             <i class="bi bi-arrow-up-short"></i>
         </a>
@@ -348,108 +139,5 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-    <script>
-        // --- Script untuk Popover (Sudah ada) ---
-        const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]');
-        const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl, {
-            container: 'body'
-        }));
-
-        // --- Script untuk Scroll-to-Top (Sudah ada) ---
-        const scrollTop = document.querySelector('.scroll-top');
-        if (scrollTop) {
-            const togglescrollTop = function() {
-                window.scrollY > 100 ? scrollTop.classList.add('active') : scrollTop.classList.remove('active');
-            }
-            window.addEventListener('load', togglescrollTop);
-            document.addEventListener('scroll', togglescrollTop);
-            scrollTop.addEventListener('click', (e) => {
-                e.preventDefault();
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
-            });
-        }
-    </script>
-
-    <script>
-        // Opsi BERSAMA yang lebih responsif
-        const baseGameSliderOptions = {
-            loop: true,
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-            breakpoints: {
-                // HP Kecil: Tampilkan 2 slide, tapi kecilkan jarak (gap)
-                320: { 
-                    slidesPerView: 2, 
-                    spaceBetween: 10 
-                }, 
-                // HP Medium/Besar
-                480: { 
-                    slidesPerView: 2.2, // Memberi kesan ada slide selanjutnya (potongan)
-                    spaceBetween: 15 
-                },
-                // Tablet
-                768: { 
-                    slidesPerView: 3, 
-                    spaceBetween: 20 
-                },
-                // Laptop/Desktop
-                992: { 
-                    slidesPerView: 4, 
-                    spaceBetween: 20 
-                },
-                1200: { 
-                    slidesPerView: 5, 
-                    spaceBetween: 20 
-                }
-            }
-        };
-
-        // Inisialisasi tetap sama
-        const swiperLaris = new Swiper('.game-slider-laris', {
-            ...baseGameSliderOptions,
-            autoplay: { delay: 3000, disableOnInteraction: false },
-        });
-
-        const swiperPopuler = new Swiper('.game-slider-populer', {
-            ...baseGameSliderOptions,
-            autoplay: { delay: 4000, disableOnInteraction: false },
-        });
-    </script>
-    <script>
-        // Klik kartu membuka Play Store search berdasarkan nama aplikasi
-        document.querySelectorAll('.game-card').forEach(card => {
-            card.addEventListener('click', (e) => {
-                if (e.target.closest('a') || e.target.closest('button')) return;
-                const titleEl = card.querySelector('.card-title');
-                if (!titleEl) return;
-                const q = encodeURIComponent(titleEl.textContent.trim());
-                const url = `https://play.google.com/store/search?q=${q}&c=apps`;
-                window.open(url, '_blank', 'noopener');
-            });
-        });
-    </script>
-    <script>
-        // Search bar: tekan Enter atau klik ikon untuk membuka Play Store search
-        (function(){
-            const input = document.querySelector('.search-bar');
-            const btn = document.querySelector('.search-bar-wrapper .input-group-text');
-            function doSearch(q){
-                q = (q||'').trim();
-                if(!q) return;
-                const url = 'https://play.google.com/store/search?q=' + encodeURIComponent(q) + '&c=apps';
-                window.open(url, '_blank', 'noopener');
-            }
-            if(input){
-                input.addEventListener('keydown', e=>{ if(e.key === 'Enter'){ e.preventDefault(); doSearch(input.value); } });
-            }
-            if(btn){ btn.addEventListener('click', ()=> doSearch(input && input.value)); }
-        })();
-    </script>
 </body>
 </html>
